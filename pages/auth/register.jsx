@@ -16,8 +16,9 @@ const Register = () => {
       );
       if (res.status === 200) {
         toast.success("User registered successfully")
-      }
+     }
     } catch (err) {
+      toast.error(err.responser.data.message);
       console.log(err);
     }
     /* actions.resetForm(); */
