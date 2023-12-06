@@ -1,13 +1,16 @@
 import Image from 'next/image';
 import { RiShoppingCart2Fill } from 'react-icons/ri';
+import Link from 'next/link';
 
 const MenuItem = () =>{
   return (
     <div className='bg-secondary rounded-3xl'>
         <div className='w-full bg-[#f1f2f3] h-[210px] grid place-content-center rounded-bl-[46px] rounded-3xl'> 
+      <Link href={"/product"}> 
       <div className='relative w-36 h-36 z-50 bg-white hover:scale-110 transition-all' >
         <Image src="/images/1200calorie.jpg" alt="" layout="fill" />
         </div>
+        </Link>
          </div>
       <div className='p-[25px] text-white'>
         <h4 className='text-xl-font-semibold'>Healty Diet Food</h4>

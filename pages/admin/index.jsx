@@ -1,15 +1,13 @@
 "use client"
 import { useFormik } from "formik";
-import { loginSchema } from "schema/login";
+import { adminSchema } from "schema/admin";
 import Link from "next/link";
 import Input from "../../components/form/Input";
 import Title from "../../components/ui/Title";
 
 
 
-
-const Login = () => {
- 
+const Admin = () => {
   const onSubmit = async (values, actions) => {
     await new Promise((resolve) => setTimeout(resolve, 4000));
     actions.resetForm();
@@ -17,22 +15,22 @@ const Login = () => {
   const { values, errors, touched, handleSubmit, handleChange, handleBlur } =
     useFormik({
       initialValues: {
-        email: '',
+        username: '',
         password: '',
       },
       onSubmit,
-      validationSchema: loginSchema,
+      validationSchema: adminSchema,
     });
 
   const inputs = [
     {
       id: 1,
-      name: "email",
-      type: "email",
-      placeholder: "Your Email Address",
-      value: values.email,
-      errorMessage: errors.email,
-      touched: touched.email,
+      name: "username",
+      type: "text",
+      placeholder: "Your Username",
+      value: values.username,
+      errorMessage: errors.username,
+      touched: touched.username,
     },
     {
       id: 2,
@@ -51,7 +49,7 @@ const Login = () => {
         className="flex flex-col items-center my-20 md:w-1/2 w-full mx-auto"
         onSubmit={handleSubmit}
       >
-        <Title addClass="text-[40px] mb-16">Login</Title>
+        <Title addClass="text-[40px] mb-16">Admin Login</Title>
         <div className="flex flex-col gap-y-2 w-full">
           {inputs.map((input) => (
             <Input
@@ -63,11 +61,11 @@ const Login = () => {
           ))}
         </div>
         <div className="flex flex-col w-full gap-y-20 mt-3">
-          <button className="btn-primary" type="submit">LOGIN</button>
+          <button className="btn-primary">LOGIN</button>
           
-          <Link href="register">
+          <Link href="Register">
             <span className="text-sm underline cursor-pointer text-secondary">
-              Don`t have an account? Please click here for register!
+              Don`t have an account?
             </span>
           </Link>
         </div>
@@ -76,7 +74,7 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default Admin;
 
 
 

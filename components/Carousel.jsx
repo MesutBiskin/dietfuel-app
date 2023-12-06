@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Slider from 'react-slick'
 import Title from './ui/Title'
 
+
 const Carousel = () => {
   const settings = {
     dots: true,
@@ -22,7 +23,7 @@ const Carousel = () => {
   };
   return (
     <div className="h-screen relative">
-    <Image src="/images/bg4salmon.jpg"
+    <Image src="/images/bg2.jpg"
     alt="" 
     layout="fill"
     objectFit='cover'
@@ -31,7 +32,7 @@ const Carousel = () => {
       <div>
       <Slider {...settings}>
       <div>
-          <div className="mt-48  text-white flex flex-col items-end gap-y-10">
+          <div className="mt-48  text-white flex flex-col items-end gap-y-10 p-20">
             <Title addClass="text-6xl">Diet Food Restaurant</Title>
             <p className="text-sm sm:w-2/5 w-full">
               Doloremque, itaque aperiam facilis rerum, commodi, temporibus
